@@ -1,353 +1,254 @@
 
-/* ==============================
-   CAMBIARE COLORE DI SFONDO
-============================== */
+/* ==========================
+   CAMBIO DE FONDO
+========================== */
 
 const colores = [
-    "#f3ebdd",
-    "#eee2cc",
-    "#f8f0e1",
-    "#e9dfcc",
-    "#f5e9d7",
-    "#e8dfd0"
+  "#f3ebdd",
+  "#eee2cc",
+  "#f8f0e1",
+  "#e9dfcc"
 ];
 
-let indiceColor = 0;
+let indice = 0;
 
-function cambiarColor() {
-
-    let nuevoIndice;
-
-    do {
-        nuevoIndice = Math.floor(
-            Math.random() * colores.length
-        );
-    } while (
-        nuevoIndice === indiceColor &&
-        colores.length > 1
-    );
-
-    indiceColor = nuevoIndice;
+document.getElementById("colore").addEventListener(
+  "click",
+  () => {
+    indice = (indice + 1) % colores.length;
 
     document.body.style.backgroundColor =
-        colores[indiceColor];
-}
+      colores[indice];
+  }
+);
 
 
-/* ==============================
-   LETTORE PDF
-============================== */
+/* ==========================
+   LÍNEA DEL TIEMPO
+========================== */
 
-let documentoPDF = null;
-let paginaActual = 1;
-let zoom = 1.2;
-let renderActual = null;
-let renderEnCurso = false;
-let renderPendiente = false;
+document.querySelectorAll(".evento").forEach(
+  boton => {
 
-async function cargarPDF() {
+    boton.addEventListener("click", () => {
 
-    const mensaje =
-        document.getElementById("mensajePDF");
-
-    if (typeof pdfjsLib === "undefined") {
-        mensaje.textContent =
-            "Impossibile caricare il lettore PDF.";
-        return;
-    }
-
-    pdfjsLib.GlobalWorkerOptions.workerSrc =
-        "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
-
-    try {
-
-        documentoPDF = await pdfjsLib.getDocument(
-            "rinascimento.pdf"
-        ).promise;
-
-        paginaActual = 1;
-
-        await mostrarPagina();
-
-    } catch (error) {
-
-        console.error(error);
-
-        mensaje.textContent =
-            "Documento non trovato. Controlla che rinascimento.pdf sia nella stessa cartella di index.html.";
-    }
-}
-
-async function mostrarPagina() {
-
-    if (!documentoPDF) return;
-
-    if (renderEnCurso) {
-        renderPendiente = true;
-        return;
-    }
-
-    renderEnCurso = true;
-
-    const numero = paginaActual;
-    const escala = zoom;
-
-    const canvas =
-        document.getElementById("paginaPDF");
-
-    const contexto = canvas.getContext("2d");
-
-    const mensaje =
-        document.getElementById("mensajePDF");
-
-    try {
-
-        const pagina = await documentoPDF.getPage(numero);
-
-        const viewport = pagina.getViewport({
-            scale: escala
-        });
-
-        const proporcion =
-            window.devicePixelRatio || 1;
-
-        canvas.width =
-            Math.floor(viewport.width * proporcion);
-
-        canvas.height =
-            Math.floor(viewport.height * proporcion);
-
-        canvas.style.width =
-            viewport.width + "px";
-
-        canvas.style.height =
-            viewport.height + "px";
-
-        contexto.setTransform(1, 0, 0, 1, 0, 0);
-
-        contexto.scale(proporcion, proporcion);
-
-        renderActual = pagina.render({
-            canvasContext: contexto,
-            viewport: viewport
-        });
-
-        await renderActual.promise;
-
-        mensaje.hidden = true;
-
-        document.getElementById("contadorPagina")
-            .textContent =
-            `Pagina ${numero} di ${documentoPDF.numPages}`;
-
-    } catch (error) {
-
-        console.error(error);
-
-        mensaje.hidden = false;
-
-        mensaje.textContent =
-            "Errore durante la visualizzazione.";
-
-    } finally {
-
-        renderActual = null;
-        renderEnCurso = false;
-
-        if (renderPendiente) {
-            renderPendiente = false;
-            mostrarPagina();
+      document.querySelectorAll(".evento").forEach(
+        elemento => {
+          elemento.classList.remove("attivo");
         }
-    }
+      );
+
+      boton.classList.add("attivo");
+
+      document.getElementById("evento-info")
+        .textContent = boton.dataset.info;
+
+    });
+
+  }
+);
+
+
+/* ==========================
+   TARJETAS DE AUTORES
+========================== */
+
+const carte = [
+  [
+    "Chi ha scritto il Morgante?",
+    "Luigi Pulci."
+  ],
+  [
+    "Chi ha scritto l'Orlando innamorato?",
+    "Matteo Maria Boiardo."
+  ],
+  [
+    "Chi ha scritto l'Orlando furioso?",
+    "Ludovico Ariosto."
+  ],
+  [
+    "Chi ha scritto il Trionfo di Bacco e Arianna?",
+    "Lorenzo de' Medici."
+  ],
+  [
+    "Chi ha scritto Il Principe?",
+    "Niccolò Machiavelli."
+  ]
+];
+
+let carta = 0;
+
+function aggiornaCarta() {
+
+  document.getElementById("carta-contatore")
+    .textContent =
+      `Carta ${carta + 1} di ${carte.length}`;
+
+  document.getElementById("carta-domanda")
+    .textContent = carte[carta][0];
+
+  document.getElementById("carta-risposta")
+    .textContent = carte[carta][1];
+
+  document.getElementById("carta-risposta")
+    .hidden = true;
+
+  document.getElementById("rivela")
+    .textContent = "Mostra risposta";
 }
 
-function irPagina(numero) {
+document.getElementById("rivela").addEventListener(
+  "click",
+  () => {
 
-    if (!documentoPDF) return;
+    const respuesta =
+      document.getElementById("carta-risposta");
 
-    paginaActual = Math.max(
-        1,
-        Math.min(numero, documentoPDF.numPages)
-    );
+    respuesta.hidden = !respuesta.hidden;
 
-    document.getElementById("documento")
-        .scrollIntoView({
-            behavior: "smooth"
-        });
+    document.getElementById("rivela")
+      .textContent = respuesta.hidden
+        ? "Mostra risposta"
+        : "Nascondi risposta";
+  }
+);
 
-    mostrarPagina();
-}
+document.getElementById("prossima").addEventListener(
+  "click",
+  () => {
 
-function paginaAnterior() {
+    carta = (carta + 1) % carte.length;
 
-    if (!documentoPDF || paginaActual <= 1) return;
-
-    paginaActual--;
-    mostrarPagina();
-}
-
-function paginaSiguiente() {
-
-    if (
-        !documentoPDF ||
-        paginaActual >= documentoPDF.numPages
-    ) return;
-
-    paginaActual++;
-    mostrarPagina();
-}
-
-function cambiarZoom(cambio) {
-
-    zoom = Math.max(
-        0.6,
-        Math.min(2.5, zoom + cambio)
-    );
-
-    mostrarPagina();
-}
+    aggiornaCarta();
+  }
+);
 
 
-/* ==============================
-   CORREGGERE IL QUIZ
-============================== */
+/* ==========================
+   RESPUESTAS DEL QUIZ
+========================== */
 
-const respuestasCorrectas = {
-    pregunta1: "b",
-    pregunta2: "a",
-    pregunta3: "c",
-    pregunta4: "b",
-    pregunta5: "a"
+const giuste = {
+  q1: "b",
+  q2: "a",
+  q3: "c",
+  q4: "b",
+  q5: "a"
 };
 
-const explicaciones = {
-    pregunta1:
-        "L'Umanesimo è un movimento letterario e filologico.",
-
-    pregunta2:
-        "Il mecenatismo consiste nel finanziamento delle arti.",
-
-    pregunta3:
-        "Leon Battista Alberti organizzò il Certame Coronario nel 1441.",
-
-    pregunta4:
-        "Ludovico Ariosto scrisse l'Orlando furioso.",
-
-    pregunta5:
-        "Machiavelli studia la realtà politica concreta."
+const spiegazioni = {
+  q1: "L'Umanesimo studia criticamente i classici.",
+  q2: "Il Certame Coronario fu promosso da Alberti.",
+  q3: "Boiardo scrisse l'Orlando innamorato.",
+  q4: "Il Principe è di Machiavelli.",
+  q5: "Il Gattamelata è opera di Donatello."
 };
 
-function corregirQuiz() {
 
-    let puntos = 0;
+/* ==========================
+   CORRECCIÓN DEL QUIZ
+========================== */
 
-    const resultado =
-        document.getElementById("resultado");
+const form = document.getElementById("quizForm");
 
-    const detalles =
-        document.getElementById("explicaciones");
+form.addEventListener("submit", evento => {
 
-    detalles.replaceChildren();
+  evento.preventDefault();
 
-    // Verificare le risposte
+  const resultado =
+    document.getElementById("resultado");
 
-    for (let i = 1; i <= 5; i++) {
+  const detalle =
+    document.getElementById("detalle");
 
-        const respuesta = document.querySelector(
-            `input[name="pregunta${i}"]:checked`
-        );
+  detalle.replaceChildren();
 
-        if (!respuesta) {
+  // Verificar que estén todas respondidas
 
-            resultado.textContent =
-                "✧ Rispondi a tutte le domande.";
+  for (let i = 1; i <= 5; i++) {
 
-            return;
-        }
+    const respuesta = form.querySelector(
+      `input[name="q${i}"]:checked`
+    );
+
+    if (!respuesta) {
+
+      resultado.textContent =
+        "Rispondi a tutte le domande prima di correggere.";
+
+      return;
+    }
+  }
+
+  // Calcular puntuación
+
+  let puntos = 0;
+
+  for (let i = 1; i <= 5; i++) {
+
+    const pregunta = `q${i}`;
+
+    const respuesta = form.querySelector(
+      `input[name="${pregunta}"]:checked`
+    ).value;
+
+    const correcta =
+      respuesta === giuste[pregunta];
+
+    if (correcta) {
+      puntos++;
     }
 
-    // Calcolare il punteggio
+    const parrafo =
+      document.createElement("p");
 
-    for (let i = 1; i <= 5; i++) {
+    if (correcta) {
 
-        const nombre = `pregunta${i}`;
-
-        const respuesta = document.querySelector(
-            `input[name="${nombre}"]:checked`
-        );
-
-        const correcto =
-            respuesta.value === respuestasCorrectas[nombre];
-
-        const parrafo =
-            document.createElement("p");
-
-        if (correcto) {
-
-            puntos++;
-
-            parrafo.textContent =
-                `✓ Domanda ${i}: corretta!`;
-
-        } else {
-
-            parrafo.textContent =
-                `✗ Domanda ${i}: ${explicaciones[nombre]}`;
-        }
-
-        detalles.appendChild(parrafo);
-    }
-
-    // Risultato finale
-
-    if (puntos === 5) {
-
-        resultado.textContent =
-            "✦ Eccellente! 5/5. La tua conoscenza è fiorita!";
-
-    } else if (puntos >= 3) {
-
-        resultado.textContent =
-            `❦ Molto bene! Hai ottenuto ${puntos}/5 punti.`;
-
-    } else if (puntos >= 1) {
-
-        resultado.textContent =
-            `✧ Hai ottenuto ${puntos}/5 punti. Continua a studiare!`;
+      parrafo.textContent =
+        `✓ Domanda ${i}: corretta!`;
 
     } else {
 
-        resultado.textContent =
-            "📜 0/5. Rileggi i capitoli e riprova!";
+      parrafo.textContent =
+        `✗ Domanda ${i}: ${spiegazioni[pregunta]}`;
     }
-}
+
+    detalle.appendChild(parrafo);
+  }
+
+  // Mostrar resultado
+
+  let mensaje;
+
+  if (puntos === 5) {
+
+    mensaje = "Eccellente!";
+
+  } else if (puntos >= 3) {
+
+    mensaje = "Molto bene!";
+
+  } else {
+
+    mensaje = "Riprova dopo il ripasso!";
+  }
+
+  resultado.textContent =
+    `Hai ottenuto ${puntos}/5 punti. ${mensaje}`;
+
+});
 
 
-/* ==============================
-   INIZIALIZZAZIONE
-============================== */
+/* ==========================
+   REINICIAR QUIZ
+========================== */
 
-document.addEventListener("DOMContentLoaded", () => {
+form.addEventListener("reset", () => {
 
-    cargarPDF();
+  document.getElementById("resultado")
+    .textContent = "";
 
-    const formulario =
-        document.getElementById("quizForm");
-
-    formulario.addEventListener("submit", (evento) => {
-
-        evento.preventDefault();
-
-        corregirQuiz();
-    });
-
-    formulario.addEventListener("reset", () => {
-
-        document.getElementById("resultado")
-            .textContent = "";
-
-        document.getElementById("explicaciones")
-            .replaceChildren();
-    });
+  document.getElementById("detalle")
+    .replaceChildren();
 
 });
