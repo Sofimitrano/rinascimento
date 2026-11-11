@@ -1,420 +1,496 @@
 
-/* ESTILO GENERAL RENACENTISTA */
+/* ==============================
+   COLORI E STILE GENERALE
+============================== */
 
 :root {
-  --pergamino: #f3ebdd;
-  --papel: #fbf6eb;
-  --papel-oscuro: #e8dcc5;
-  --bordo: #702d35;
-  --bordo-oscuro: #50232a;
-  --dorado: #b08a48;
-  --oliva: #596347;
-  --tinta: #382c25;
-  --texto-suave: #75675a;
+    --pergamino: #f3ebdd;
+    --papel: #fbf6eb;
+    --papel-oscuro: #e8dcc5;
+    --bordo: #702d35;
+    --bordo-oscuro: #50232a;
+    --dorado: #b08a48;
+    --oliva: #596347;
+    --tinta: #382c25;
+    --texto-suave: #75675a;
 }
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 body {
-  font-family: "Libre Baskerville", serif;
-  background-color: var(--pergamino);
-  background-image: radial-gradient(
-    rgba(135, 103, 58, 0.09) 0.7px,
-    transparent 0.7px
-  );
-  background-size: 8px 8px;
-  color: var(--tinta);
-  line-height: 1.8;
-  transition: background-color 0.4s;
+    font-family: 'Libre Baskerville', serif;
+    background-color: var(--pergamino);
+    color: var(--tinta);
+    line-height: 1.8;
+    transition: background-color 0.4s;
 }
 
-/* NAVEGACIÓN */
+/* ==============================
+   MENU
+============================== */
 
 header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: rgba(243, 235, 221, 0.97);
-  border-bottom: 2px solid var(--dorado);
-  box-shadow: 0 4px 15px rgba(56, 44, 37, 0.12);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(243,235,221,0.97);
+    border-bottom: 2px solid var(--dorado);
+    box-shadow: 0 4px 15px rgba(56,44,37,0.12);
 }
 
 nav {
-  max-width: 1200px;
-  margin: auto;
-  padding: 15px 25px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
+    max-width: 1200px;
+    margin: auto;
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
 }
 
-.logo {
-  font-family: "IM Fell English", serif;
-  color: var(--bordo);
-  font-size: 1.5rem;
-  text-decoration: none;
+nav h2 {
+    font-family: 'IM Fell English', serif;
+    color: var(--bordo);
+    font-size: 1.6rem;
 }
 
-.menu {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 15px;
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px;
 }
 
-.menu a {
-  color: var(--tinta);
-  text-decoration: none;
-  font-size: 0.8rem;
+nav a {
+    text-decoration: none;
+    color: var(--tinta);
+    font-size: 0.8rem;
 }
 
-.menu a:hover {
-  color: var(--bordo);
-  text-decoration: underline;
+nav a:hover {
+    color: var(--bordo);
+    text-decoration: underline;
 }
 
-/* BOTONES */
+/* ==============================
+   BOTTONI
+============================== */
 
 button,
-.bottone {
-  display: inline-block;
-  background: var(--bordo);
-  color: var(--papel);
-  border: 1px solid var(--dorado);
-  padding: 11px 22px;
-  font-family: "Cormorant Garamond", serif;
-  font-size: 1.15rem;
-  font-weight: 700;
-  cursor: pointer;
-  text-decoration: none;
-  transition: 0.3s;
+.boton {
+    background: var(--bordo);
+    color: var(--papel);
+    border: 1px solid var(--dorado);
+    padding: 12px 23px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: 0.3s;
 }
 
 button:hover,
-.bottone:hover {
-  background: var(--bordo-oscuro);
-  transform: translateY(-2px);
+.boton:hover {
+    background: var(--bordo-oscuro);
+    transform: translateY(-3px);
 }
 
-.secondario {
-  background: var(--oliva);
+.boton-secundario {
+    background: var(--oliva);
 }
 
-/* PORTADA */
+/* ==============================
+   PORTADA
+============================== */
 
-.inizio {
-  max-width: 1150px;
-  min-height: 80vh;
-  margin: auto;
-  padding: 90px 35px;
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  align-items: center;
-  gap: 60px;
+.inicio {
+    max-width: 1150px;
+    min-height: 85vh;
+    margin: auto;
+    padding: 90px 35px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
 }
 
-.sottotitolo,
-.capitolo {
-  display: block;
-  color: var(--oliva);
-  font-size: 0.78rem;
-  letter-spacing: 3px;
-  font-weight: bold;
-  margin-bottom: 15px;
+.contenido-inicio {
+    max-width: 650px;
 }
 
-.ornamento,
-.separatore {
-  color: var(--dorado);
-  font-size: 1.3rem;
-  margin: 20px 0;
+.subtitulo,
+.numero-seccion {
+    color: var(--oliva);
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+    font-weight: bold;
 }
 
-.separatore {
-  text-align: center;
+.adorno {
+    color: var(--dorado);
+    font-size: 1.3rem;
+    margin: 20px 0;
 }
 
 h1 {
-  font-family: "IM Fell English", serif;
-  font-size: clamp(3rem, 6vw, 5.5rem);
-  line-height: 1.1;
-  font-weight: 400;
-  color: var(--bordo);
-  margin: 20px 0;
+    font-family: 'IM Fell English', serif;
+    color: var(--bordo);
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    line-height: 1.05;
+    font-weight: 400;
+    margin: 25px 0;
 }
 
-.frase {
-  font-family: "Cormorant Garamond", serif;
-  color: var(--oliva);
-  font-size: 2rem;
-  font-style: italic;
-  margin-bottom: 15px;
+.frase-inicio {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 2rem;
+    color: var(--oliva);
+    margin-bottom: 20px;
 }
 
-.inizio p {
-  margin-bottom: 30px;
-  color: var(--texto-suave);
+.contenido-inicio p {
+    color: var(--texto-suave);
+    margin-bottom: 30px;
 }
 
-/* IMÁGENES */
+/* ==============================
+   MARCO DECORATIVO
+============================== */
 
-figure {
-  text-align: center;
+.imagen-inicio {
+    text-align: center;
 }
 
-figure img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-  margin: auto;
-  border: 5px solid var(--papel);
-  outline: 2px solid var(--dorado);
-  box-shadow: 8px 12px 25px rgba(56, 44, 37, 0.2);
+.marco-imagen {
+    width: 290px;
+    height: 360px;
+    background: var(--papel-oscuro);
+    border: 2px solid var(--dorado);
+    outline: 7px double rgba(176,138,72,0.4);
+    outline-offset: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    box-shadow: 10px 15px 30px rgba(56,44,37,0.18);
 }
 
-figcaption {
-  margin-top: 20px;
-  color: var(--texto-suave);
-  font-family: "Cormorant Garamond", serif;
-  font-size: 1.2rem;
-  font-style: italic;
+.esquina {
+    font-size: 2rem;
+    color: var(--bordo);
 }
 
-.opera,
-.ritratto {
-  margin: 45px auto;
+.ilustracion {
+    font-size: 8rem;
+    color: var(--dorado);
 }
 
-.opera img {
-  max-height: 450px;
+.epigrafe {
+    margin-top: 30px;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    color: var(--texto-suave);
 }
 
-.ritratto img {
-  max-height: 350px;
+.separador {
+    text-align: center;
+    color: var(--dorado);
+    font-size: 1.4rem;
+    padding: 20px;
 }
 
-/* SECCIONES */
+/* ==============================
+   SEZIONI
+============================== */
 
-section:not(.inizio) {
-  max-width: 1100px;
-  margin: auto;
-  padding: 75px 30px;
-  scroll-margin-top: 110px;
+section:not(.inicio) {
+    max-width: 1100px;
+    margin: auto;
+    padding: 75px 30px;
+    scroll-margin-top: 110px;
 }
 
 section h2 {
-  font-family: "IM Fell English", serif;
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 400;
-  color: var(--bordo);
-  margin-bottom: 25px;
+    font-family: 'IM Fell English', serif;
+    font-size: 2.8rem;
+    font-weight: 400;
+    color: var(--bordo);
+    margin: 20px 0 25px;
 }
 
-section h3 {
-  font-family: "Cormorant Garamond", serif;
-  color: var(--bordo);
-  font-size: 1.7rem;
-  margin: 15px 0;
-}
-
-section > p {
-  max-width: 850px;
-  margin-bottom: 20px;
+.introduccion {
+    color: var(--texto-suave);
+    max-width: 800px;
+    margin-bottom: 25px;
 }
 
 .capitular::first-letter {
-  float: left;
-  font-family: "IM Fell English", serif;
-  font-size: 4.5rem;
-  line-height: 0.9;
-  padding-right: 10px;
-  color: var(--bordo);
+    float: left;
+    font-family: 'IM Fell English', serif;
+    font-size: 5rem;
+    line-height: 0.8;
+    color: var(--bordo);
+    padding-right: 12px;
 }
 
-/* TARJETAS */
+/* ==============================
+   FRASE DESTACADA
+============================== */
 
-.tarjetas,
-.due-colonne {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 25px;
-  margin-top: 35px;
+.frase-destacada {
+    margin-top: 35px;
+    padding: 35px;
+    background: var(--papel);
+    border: 1px solid var(--dorado);
+    border-left: 6px solid var(--bordo);
+    text-align: center;
+}
+
+.frase-destacada span {
+    color: var(--dorado);
+    font-size: 3rem;
+}
+
+.frase-destacada p {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.8rem;
+    color: var(--bordo);
+}
+
+/* ==============================
+   TARJETAS
+============================== */
+
+.tarjetas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 35px;
 }
 
 .tarjeta {
-  background: var(--papel);
-  border: 1px solid var(--dorado);
-  padding: 30px;
-  box-shadow: 5px 7px 15px rgba(56, 44, 37, 0.08);
-  transition: 0.3s;
+    background: var(--papel);
+    border: 1px solid var(--dorado);
+    padding: 30px;
+    box-shadow: 5px 7px 15px rgba(56,44,37,0.08);
+    transition: 0.3s;
 }
 
 .tarjeta:hover {
-  transform: translateY(-5px);
-  box-shadow: 8px 12px 20px rgba(56, 44, 37, 0.15);
+    transform: translateY(-6px);
+    box-shadow: 8px 12px 20px rgba(56,44,37,0.15);
+}
+
+.tarjeta-numero {
+    color: var(--dorado);
+    font-family: 'IM Fell English', serif;
+    font-size: 1.5rem;
+}
+
+.tarjeta h3 {
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--bordo);
+    font-size: 1.7rem;
+    margin: 12px 0;
 }
 
 .tarjeta p {
-  color: var(--texto-suave);
-  margin-bottom: 12px;
+    color: var(--texto-suave);
+    font-size: 0.9rem;
+    margin-bottom: 20px;
 }
 
-.numero {
-  color: var(--dorado);
-  font-family: "IM Fell English", serif;
-  font-size: 1.5rem;
+/* ==============================
+   LETTORE PDF
+============================== */
+
+.lector {
+    background: var(--papel);
+    border: 2px solid var(--dorado);
+    padding: 25px;
+    box-shadow: 7px 10px 20px rgba(56,44,37,0.1);
 }
 
-/* CITAS */
-
-blockquote {
-  background: var(--papel);
-  border: 1px solid var(--dorado);
-  border-left: 6px solid var(--bordo);
-  margin-top: 40px;
-  padding: 35px;
-  text-align: center;
+.controles-pdf {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 15px 0;
 }
 
-blockquote p {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 2rem;
-  font-style: italic;
-  color: var(--bordo);
+#contadorPagina {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    color: var(--bordo);
+    font-weight: bold;
 }
 
-blockquote cite {
-  color: var(--texto-suave);
+#visorPDF {
+    background: #e8dcc5;
+    border: 1px solid var(--dorado);
+    overflow-x: auto;
+    text-align: center;
+    padding: 15px;
+    min-height: 200px;
 }
 
-/* CUESTIONARIO */
+#paginaPDF {
+    display: block;
+    margin: auto;
+    max-width: none;
+    background: white;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.15);
+}
+
+#mensajePDF {
+    padding: 25px;
+    color: var(--bordo);
+}
+
+/* ==============================
+   QUIZ
+============================== */
 
 .quiz {
-  margin-top: 30px;
-  padding: 35px;
-  background: var(--papel);
-  border: 2px solid var(--dorado);
-  box-shadow: 7px 10px 20px rgba(56, 44, 37, 0.1);
+    background: var(--papel);
+    border: 2px solid var(--dorado);
+    padding: 40px;
+    margin-top: 30px;
 }
 
-.quiz fieldset {
-  border: none;
-  border-bottom: 1px solid var(--dorado);
-  padding: 25px 0;
-  margin-bottom: 10px;
-}
-
-.quiz legend {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 1.6rem;
-  font-weight: bold;
-  color: var(--bordo);
+.quiz h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    color: var(--bordo);
+    margin: 25px 0 15px;
 }
 
 .quiz label {
-  display: block;
-  padding: 10px;
-  cursor: pointer;
+    display: block;
+    padding: 12px;
+    color: var(--texto-suave);
+    cursor: pointer;
 }
 
 .quiz label:hover {
-  background: var(--papel-oscuro);
+    background: var(--papel-oscuro);
 }
 
 .quiz input {
-  accent-color: var(--bordo);
-  margin-right: 10px;
+    accent-color: var(--bordo);
+    margin-right: 10px;
 }
 
-.quiz button {
-  margin: 15px 10px 0 0;
+.linea-quiz {
+    height: 1px;
+    background: var(--dorado);
+    margin: 25px 0;
 }
 
 #resultado {
-  margin-top: 25px;
-  color: var(--bordo);
-  font-family: "Cormorant Garamond", serif;
-  font-size: 1.6rem;
-  font-weight: bold;
+    margin-top: 25px;
+    color: var(--bordo);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
-#detalle p {
-  margin: 12px 0;
-  padding: 10px;
-  border-left: 3px solid var(--dorado);
-  background: var(--papel-oscuro);
+#explicaciones p {
+    margin: 10px 0;
+    padding: 10px;
+    background: var(--papel-oscuro);
 }
 
-/* PIE DE PÁGINA */
+/* ==============================
+   FOOTER
+============================== */
 
 footer {
-  text-align: center;
-  background: var(--bordo-oscuro);
-  color: var(--papel);
-  padding: 50px 20px;
-  border-top: 5px double var(--dorado);
+    text-align: center;
+    padding: 50px 20px;
+    background: var(--bordo-oscuro);
+    color: var(--papel);
+    border-top: 5px double var(--dorado);
 }
 
 footer h2 {
-  font-family: "IM Fell English", serif;
-  color: #e5c991;
-  font-size: 2rem;
+    font-family: 'IM Fell English', serif;
+    font-size: 2rem;
+    color: #e5c991;
 }
 
-footer p,
-footer small {
-  color: var(--papel-oscuro);
+.copyright {
+    margin-top: 20px;
+    font-style: italic;
 }
 
-/* ADAPTACIÓN A CELULARES */
+/* ==============================
+   RESPONSIVE
+============================== */
 
 @media (max-width: 900px) {
-  nav {
-    flex-direction: column;
-  }
+    nav {
+        flex-direction: column;
+    }
 
-  .menu {
-    justify-content: center;
-  }
+    .inicio {
+        flex-direction: column;
+        text-align: center;
+    }
 
-  .inizio {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
+    .tarjetas {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
-@media (max-width: 600px) {
-  .inizio {
-    padding: 60px 20px;
-  }
+@media (max-width: 550px) {
+    nav ul {
+        justify-content: center;
+        gap: 10px;
+    }
 
-  section:not(.inizio) {
-    padding: 55px 20px;
-  }
+    .inicio {
+        padding: 60px 20px;
+    }
 
-  .tarjetas,
-  .due-colonne {
-    grid-template-columns: 1fr;
-  }
+    section:not(.inicio) {
+        padding: 55px 20px;
+    }
 
-  .quiz {
-    padding: 20px;
-  }
+    section h2 {
+        font-size: 2.2rem;
+    }
 
-  .menu {
-    gap: 10px;
-  }
+    .tarjetas {
+        grid-template-columns: 1fr;
+    }
 
-  .menu a {
-    font-size: 0.75rem;
-  }
+    .marco-imagen {
+        width: 240px;
+        height: 290px;
+    }
+
+    .quiz {
+        padding: 20px;
+    }
+
+    .lector {
+        padding: 10px;
+    }
 }
