@@ -1,0 +1,420 @@
+
+/* ESTILO GENERAL RENACENTISTA */
+
+:root {
+  --pergamino: #f3ebdd;
+  --papel: #fbf6eb;
+  --papel-oscuro: #e8dcc5;
+  --bordo: #702d35;
+  --bordo-oscuro: #50232a;
+  --dorado: #b08a48;
+  --oliva: #596347;
+  --tinta: #382c25;
+  --texto-suave: #75675a;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Libre Baskerville", serif;
+  background-color: var(--pergamino);
+  background-image: radial-gradient(
+    rgba(135, 103, 58, 0.09) 0.7px,
+    transparent 0.7px
+  );
+  background-size: 8px 8px;
+  color: var(--tinta);
+  line-height: 1.8;
+  transition: background-color 0.4s;
+}
+
+/* NAVEGACIÓN */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(243, 235, 221, 0.97);
+  border-bottom: 2px solid var(--dorado);
+  box-shadow: 0 4px 15px rgba(56, 44, 37, 0.12);
+}
+
+nav {
+  max-width: 1200px;
+  margin: auto;
+  padding: 15px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo {
+  font-family: "IM Fell English", serif;
+  color: var(--bordo);
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 15px;
+}
+
+.menu a {
+  color: var(--tinta);
+  text-decoration: none;
+  font-size: 0.8rem;
+}
+
+.menu a:hover {
+  color: var(--bordo);
+  text-decoration: underline;
+}
+
+/* BOTONES */
+
+button,
+.bottone {
+  display: inline-block;
+  background: var(--bordo);
+  color: var(--papel);
+  border: 1px solid var(--dorado);
+  padding: 11px 22px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+button:hover,
+.bottone:hover {
+  background: var(--bordo-oscuro);
+  transform: translateY(-2px);
+}
+
+.secondario {
+  background: var(--oliva);
+}
+
+/* PORTADA */
+
+.inizio {
+  max-width: 1150px;
+  min-height: 80vh;
+  margin: auto;
+  padding: 90px 35px;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  align-items: center;
+  gap: 60px;
+}
+
+.sottotitolo,
+.capitolo {
+  display: block;
+  color: var(--oliva);
+  font-size: 0.78rem;
+  letter-spacing: 3px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.ornamento,
+.separatore {
+  color: var(--dorado);
+  font-size: 1.3rem;
+  margin: 20px 0;
+}
+
+.separatore {
+  text-align: center;
+}
+
+h1 {
+  font-family: "IM Fell English", serif;
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  line-height: 1.1;
+  font-weight: 400;
+  color: var(--bordo);
+  margin: 20px 0;
+}
+
+.frase {
+  font-family: "Cormorant Garamond", serif;
+  color: var(--oliva);
+  font-size: 2rem;
+  font-style: italic;
+  margin-bottom: 15px;
+}
+
+.inizio p {
+  margin-bottom: 30px;
+  color: var(--texto-suave);
+}
+
+/* IMÁGENES */
+
+figure {
+  text-align: center;
+}
+
+figure img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: auto;
+  border: 5px solid var(--papel);
+  outline: 2px solid var(--dorado);
+  box-shadow: 8px 12px 25px rgba(56, 44, 37, 0.2);
+}
+
+figcaption {
+  margin-top: 20px;
+  color: var(--texto-suave);
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.2rem;
+  font-style: italic;
+}
+
+.opera,
+.ritratto {
+  margin: 45px auto;
+}
+
+.opera img {
+  max-height: 450px;
+}
+
+.ritratto img {
+  max-height: 350px;
+}
+
+/* SECCIONES */
+
+section:not(.inizio) {
+  max-width: 1100px;
+  margin: auto;
+  padding: 75px 30px;
+  scroll-margin-top: 110px;
+}
+
+section h2 {
+  font-family: "IM Fell English", serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 400;
+  color: var(--bordo);
+  margin-bottom: 25px;
+}
+
+section h3 {
+  font-family: "Cormorant Garamond", serif;
+  color: var(--bordo);
+  font-size: 1.7rem;
+  margin: 15px 0;
+}
+
+section > p {
+  max-width: 850px;
+  margin-bottom: 20px;
+}
+
+.capitular::first-letter {
+  float: left;
+  font-family: "IM Fell English", serif;
+  font-size: 4.5rem;
+  line-height: 0.9;
+  padding-right: 10px;
+  color: var(--bordo);
+}
+
+/* TARJETAS */
+
+.tarjetas,
+.due-colonne {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  margin-top: 35px;
+}
+
+.tarjeta {
+  background: var(--papel);
+  border: 1px solid var(--dorado);
+  padding: 30px;
+  box-shadow: 5px 7px 15px rgba(56, 44, 37, 0.08);
+  transition: 0.3s;
+}
+
+.tarjeta:hover {
+  transform: translateY(-5px);
+  box-shadow: 8px 12px 20px rgba(56, 44, 37, 0.15);
+}
+
+.tarjeta p {
+  color: var(--texto-suave);
+  margin-bottom: 12px;
+}
+
+.numero {
+  color: var(--dorado);
+  font-family: "IM Fell English", serif;
+  font-size: 1.5rem;
+}
+
+/* CITAS */
+
+blockquote {
+  background: var(--papel);
+  border: 1px solid var(--dorado);
+  border-left: 6px solid var(--bordo);
+  margin-top: 40px;
+  padding: 35px;
+  text-align: center;
+}
+
+blockquote p {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2rem;
+  font-style: italic;
+  color: var(--bordo);
+}
+
+blockquote cite {
+  color: var(--texto-suave);
+}
+
+/* CUESTIONARIO */
+
+.quiz {
+  margin-top: 30px;
+  padding: 35px;
+  background: var(--papel);
+  border: 2px solid var(--dorado);
+  box-shadow: 7px 10px 20px rgba(56, 44, 37, 0.1);
+}
+
+.quiz fieldset {
+  border: none;
+  border-bottom: 1px solid var(--dorado);
+  padding: 25px 0;
+  margin-bottom: 10px;
+}
+
+.quiz legend {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: var(--bordo);
+}
+
+.quiz label {
+  display: block;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.quiz label:hover {
+  background: var(--papel-oscuro);
+}
+
+.quiz input {
+  accent-color: var(--bordo);
+  margin-right: 10px;
+}
+
+.quiz button {
+  margin: 15px 10px 0 0;
+}
+
+#resultado {
+  margin-top: 25px;
+  color: var(--bordo);
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+#detalle p {
+  margin: 12px 0;
+  padding: 10px;
+  border-left: 3px solid var(--dorado);
+  background: var(--papel-oscuro);
+}
+
+/* PIE DE PÁGINA */
+
+footer {
+  text-align: center;
+  background: var(--bordo-oscuro);
+  color: var(--papel);
+  padding: 50px 20px;
+  border-top: 5px double var(--dorado);
+}
+
+footer h2 {
+  font-family: "IM Fell English", serif;
+  color: #e5c991;
+  font-size: 2rem;
+}
+
+footer p,
+footer small {
+  color: var(--papel-oscuro);
+}
+
+/* ADAPTACIÓN A CELULARES */
+
+@media (max-width: 900px) {
+  nav {
+    flex-direction: column;
+  }
+
+  .menu {
+    justify-content: center;
+  }
+
+  .inizio {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .inizio {
+    padding: 60px 20px;
+  }
+
+  section:not(.inizio) {
+    padding: 55px 20px;
+  }
+
+  .tarjetas,
+  .due-colonne {
+    grid-template-columns: 1fr;
+  }
+
+  .quiz {
+    padding: 20px;
+  }
+
+  .menu {
+    gap: 10px;
+  }
+
+  .menu a {
+    font-size: 0.75rem;
+  }
+}
