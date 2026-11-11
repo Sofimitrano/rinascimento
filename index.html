@@ -1,443 +1,496 @@
 
 <!DOCTYPE html>
 <html lang="it">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Umanesimo e Rinascimento</title>
-
-    <link rel="stylesheet" href="style.css">
-
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=IM+Fell+English&family=Libre+Baskerville&display=swap" rel="stylesheet">
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js" defer></script>
-    <script src="script.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Umanesimo e Rinascimento</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 
 <body>
 
 <header>
-    <nav>
-        <h2>❦ Il Rinascimento</h2>
-
-        <ul>
-            <li><a href="#inizio">Inizio</a></li>
-            <li><a href="#contenuti">Contenuti</a></li>
-            <li><a href="#documento">Studia</a></li>
-            <li><a href="#quiz">Quiz</a></li>
-            <li>
-                <button onclick="cambiarColor()">
-                    ✧ Sfondo
-                </button>
-            </li>
-        </ul>
-    </nav>
+  <a class="brand" href="#inizio">❦ Il Rinascimento</a>
+  <nav>
+    <a href="#indice">Capitoli</a>
+    <a href="#cronologia">Cronologia</a>
+    <a href="#carte">Carte</a>
+    <a href="#quiz">Quiz</a>
+    <button id="colore" type="button">✧ Sfondo</button>
+  </nav>
 </header>
 
 <main>
 
-    <!-- PORTADA -->
+  <!-- PORTADA -->
+  <section class="hero" id="inizio">
+    <span class="eyebrow">
+      STORIA · LETTERATURA · ARTE · POLITICA
+    </span>
+    <h1>Umanesimo<br>e Rinascimento</h1>
+    <p>
+      Un viaggio interattivo attraverso la cultura
+      italiana, dal Quattrocento al Cinquecento.
+    </p>
+    <a class="btn" href="#indice">Inizia il viaggio ❧</a>
+  </section>
 
-    <section id="inizio" class="inicio">
+  <div class="separatore">✦ ───── ❦ ───── ✦</div>
 
-        <div class="contenido-inicio">
+  <!-- INDICE -->
+  <section id="indice">
+    <span class="eyebrow">INDICE</span>
+    <h2>Esplora i capitoli</h2>
+    <p>
+      Scegli un argomento e scopri le idee principali.
+      Apri «Da ricordare» per ripassare.
+    </p>
 
-            <span class="subtitulo">
-                UN VIAGGIO NELLA CULTURA ITALIANA
-            </span>
+    <div class="indice-grid">
+      <a href="#pagina-1">01 · Introduzione</a>
+      <a href="#pagina-2">02 · Contesto storico, Umanesimo e lingua</a>
+      <a href="#pagina-3">03 · Lingua e letteratura</a>
+      <a href="#pagina-4">04 · Il Trionfo di Bacco e Arianna — I</a>
+      <a href="#pagina-5">05 · Il Trionfo di Bacco e Arianna — II</a>
+      <a href="#pagina-6">06 · Il Trionfo di Bacco e Arianna — III</a>
+      <a href="#pagina-7">07 · Poliziano e il poema cavalleresco</a>
+      <a href="#pagina-8">08 · Orlando innamorato e Ariosto</a>
+      <a href="#pagina-9">09 · Orlando furioso — Proemio</a>
+      <a href="#pagina-10">10 · Orlando furioso — Ingiustissimo amor</a>
+      <a href="#pagina-11">11 · Ingiustissimo amor — Continuazione</a>
+      <a href="#pagina-12">12 · La riflessione politica</a>
+      <a href="#pagina-13">13 · Niccolò Machiavelli</a>
+      <a href="#pagina-14">14 · Guicciardini, pittura e scultura</a>
+      <a href="#pagina-15">15 · Pittura e scultura del Quattrocento</a>
+      <a href="#pagina-16">16 · Testo politico: la verità effettuale</a>
+    </div>
+  </section>
 
-            <div class="adorno">
-                ❦ ───────── ❦
-            </div>
+  <!-- CAPITOLI -->
+  <section id="capitoli">
+    <span class="eyebrow">IL PERCORSO</span>
+    <h2>Le idee essenziali</h2>
 
-            <h1>
-                UMANESIMO<br>
-                E RINASCIMENTO
-            </h1>
+    <article class="capitolo" id="pagina-1">
+      <span class="num">01 / 16</span>
+      <h3>Introduzione</h3>
+      <p>
+        Tra la fine del Trecento e la fine del Cinquecento,
+        Umanesimo e Rinascimento accompagnano il passaggio
+        dal Medioevo alla prima età moderna. L'Italia
+        diventa un centro di innovazione culturale,
+        letteraria, artistica e politica.
+      </p>
+      <div class="galleria">
+        <img src="imagenes/pagina_01_imagen_01.jpg" alt="Illustrazione introduttiva" loading="lazy">
+        <img src="imagenes/pagina_01_imagen_02.jpg" alt="Seconda illustrazione introduttiva" loading="lazy">
+      </div>
+      <details class="nota">
+        <summary>✦ Da ricordare</summary>
+        <p>Un nuovo modo di guardare l'uomo, la natura e il passato.</p>
+      </details>
+    </article>
 
-            <h2 class="frase-inicio">
-                La rinascita dell'uomo,
-                dell'arte e del sapere
-            </h2>
+    <article class="capitolo" id="pagina-2">
+      <span class="num">02 / 16</span>
+      <h3>Contesto storico, Umanesimo e lingua</h3>
+      <p>
+        L'Italia è divisa in Stati regionali e signorie:
+        Milano, Firenze, Venezia, Stato della Chiesa e Napoli.
+        Le corti sostengono artisti e letterati attraverso
+        il mecenatismo. Gli umanisti studiano i testi greci
+        e latini, mentre il Rinascimento applica questi ideali
+        all'arte, alla scienza e alla società.
+      </p>
+      <details class="nota">
+        <summary>✦ Da ricordare</summary>
+        <p>
+          Umanesimo: studio dei classici.
+          Rinascimento: rinnovamento della cultura e delle arti.
+        </p>
+      </details>
+    </article>
 
-            <p>
-                Tra la fine del Trecento e la fine
-                del Cinquecento, l'Italia vive
-                una straordinaria trasformazione
-                culturale, politica e artistica.
-            </p>
+    <article class="capitolo" id="pagina-3">
+      <span class="num">03 / 16</span>
+      <h3>Lingua e letteratura</h3>
+      <p>
+        Il latino domina inizialmente la cultura umanistica,
+        ma il volgare acquista prestigio. Nel 1441
+        Leon Battista Alberti organizza il Certame Coronario.
+        Si discutono tre modelli linguistici: la lingua
+        delle corti, il fiorentino contemporaneo e il
+        fiorentino del Trecento. Lorenzo de' Medici
+        è poeta e protagonista della politica fiorentina.
+      </p>
+      <div class="galleria">
+        <img src="imagenes/pagina_03_imagen_01.jpg" alt="Immagine del capitolo sulla letteratura" loading="lazy">
+      </div>
+      <details class="nota">
+        <summary>✦ Da ricordare</summary>
+        <p>
+          Tre modelli linguistici: cortigiano,
+          fiorentino vivo e fiorentino trecentesco.
+        </p>
+      </details>
+    </article>
 
-            <a href="#contenuti" class="boton">
-                Inizia il viaggio ❧
-            </a>
+    <article class="capitolo" id="pagina-4">
+      <span class="num">04 / 16</span>
+      <h3>Il Trionfo di Bacco e Arianna — I</h3>
+      <p>
+        Il canto carnascialesco di Lorenzo de' Medici
+        celebra la giovinezza e la gioia, ma ricorda
+        che il tempo fugge. Bacco e Arianna guidano
+        una festa dedicata al piacere del presente.
+      </p>
+      <details class="nota">
+        <summary>✦ Da ricordare</summary>
+        <p>«Quant'è bella giovinezza, che si fugge tuttavia!»</p>
+      </details>
+    </article>
 
-        </div>
+    <article class="capitolo" id="pagina-5">
+      <span class="num">05 / 16</span>
+      <h3>Il Trionfo di Bacco e Arianna — II</h3>
+      <p>
+        Nelle strofe successive compaiono personaggi
+        mitologici e figure festose. Il ritornello
+        invita a vivere il presente, perché il futuro
+        è incerto.
+      </p>
+      <details class="nota">
+        <summary>✦ Da ricordare</summary>
+        <p>«Chi vuol esser lieto, sia: di doman non c'è certezza.»</p>
+      </details>
+    </article>
 
-        <div class="imagen-inicio">
-            <div class="marco-imagen">
-                <span class="esquina">❦</span>
-                <div class="ilustracion">⚜</div>
-                <span class="esquina">❦</span>
-            </div>
+    <article class="capitolo" id="pagina-6">
+      <span class="num">06 / 16</span>
+      <h3>Il Trionfo di Bacco e Arianna — III</h3>
+      <p>
+        La conclusione invita giovani e innamorati
+        a cantare e festeggiare. La ripetizione del
+        ritornello rende il componimento musicale
+        e facilmente memorabile.
+      </p>
+      <div class="galleria">
+        <img src="imagenes/pagina_06_imagen_01.jpg" alt="Immagine relativa al Trionfo" loading="lazy">
+      </div>
+      <details class="nota">
+        <summary>✦ Da ricordare</summary>
+        <p>Il tempo passa: la felicità va colta nel presente.</p>
+      </details>
+    </article>
 
-            <p class="epigrafe">
-                La riscoperta della cultura classica
-            </p>
-        </div>
+    <article class="capitolo" id="pagina-7">
+      <span class="num">07 / 16</span>
+      <h3>Poliziano e il poema cavalleresco</h3>
+      <p>
+        Angelo Poliziano, legato alla corte medicea,
+        scrive le Stanze per la giostra.
+        Il poema cavalleresco riprende le avventure
+        dei paladini. Luigi Pulci scrive il Morgante,
+        ricco di elementi comici; Matteo Maria Boiardo
+        compone l'Orlando innamorato.
+      </p>
+      <div class="galleria">
+        <img src="imagenes/pagina_07_imagen_01.jpg" alt="Immagine del capitolo sui poemi" loading="lazy">
+      </div>
+      <details class="nota">
+        <summary>✦ Da ricordare</summary>
+        <p>Pulci: Morgante. Boiardo: Orlando innamorato.</p>
+      </details>
+    </article>
 
-    </section>
+    <article class="capitolo" id="pagina-8">
+      <span class="num">08 / 16</span>
+      <h3>Orlando innamorato e Ariosto</h3>
+      <p>
+        Boiardo presenta un eroe cavalleresco
+        che viene vinto dall'amore: neppure
+        la forza può proteggerlo dai sentimenti.
+        Ludovico Ariosto riprende questo mondo
+        nell'Orlando furioso.
+      </p>
+      <div class="galleria">
+        <img src="imagenes/pagina_08_imagen_01.jpg" alt="Immagine relativa a Orlando" loading="lazy">
+      </div>
+      <details class="nota">
+        <summary>✦ Da ricordare</summary>
+        <p>Anche il paladino Orlando si innamora.</p>
+      </details>
+    </article>
 
-    <div class="separador">
-        ✦ ───────── ❦ ───────── ✦
+    <article class="capitolo" id="pagina-9">
+      <span class="num">09 / 16</span>
+      <h3>Orlando furioso — Proemio</h3>
+      <p>
+        Ariosto annuncia i temi del poema:
+        donne, cavalieri, armi, amori e imprese.
+        Le avventure cavalleresche si intrecciano
+        con i sentimenti, alternando eroismo e ironia.
+      </p>
+      <details class="nota">
+        <summary>✦ Da ricordare</summary>
+        <p>«Le donne, i cavallier, l'arme, gli amori…»</p>
+      </details>
+    </article>
+
+    <article class="capitolo" id="pagina-10">
+      <span class="num">10 / 16</span>
+      <h3>Orlando furioso — Ingiustissimo amor</h3>
+      <p>
+        Il brano si apre con una domanda rivolta
+        ad Amore: perché i sentimenti non sono
+        sempre ricambiati? L'amore appare come
+        una forza irrazionale che produce
+        contrasti e sofferenza.
+      </p>
+      <details class="nota">
+        <summary>✦ Da ricordare</summary>
+        <p>L'amore non corrisposto è il tema centrale.</p>
+      </details>
+    </article>
+
+    <article class="capitolo" id="pagina-11">
+      <span class="num">11 / 16</span>
+      <h3>Ingiustissimo amor — Continuazione</h3>
+      <p>
+        La continuazione intensifica il conflitto
+        emotivo attraverso immagini energiche,
+        fino allo scontro. Ariosto mostra passioni
+        che possono trasformarsi in rivalità
+        e violenza.
+      </p>
+      <div class="galleria">
+        <img src="imagenes/pagina_11_imagen_01.jpg" alt="Immagine del brano letterario" loading="lazy">
+      </div>
+      <details class="nota">
+        <summary>✦ Da ricordare</summary>
+        <p>Le immagini forti esprimono la tensione amorosa.</p>
+      </details>
+    </article>
+
+    <article class="capitolo" id="pagina-12">
+      <span class="num">12 / 16</span>
+      <h3>La riflessione politica</h3>
+      <p>
+        Nel Quattrocento si scrivono trattati
+        sul governo reale e sulle società ideali.
+        Gli autori riprendono i classici e
+        riflettono sulle qualità morali del
+        buon governante. Tra gli intellettuali
+        figurano Platina, Pontano, Vergerio
+        e Leonardo Bruni.
+      </p>
+      <div class="galleria">
+        <img src="imagenes/pagina_12_imagen_01.jpg" alt="Immagine della sezione politica" loading="lazy">
+      </div>
+      <details class="nota">
+        <summary>✦ Da ricordare</summary>
+        <p>Prima di Machiavelli prevalgono spesso modelli ideali.</p>
+      </details>
+    </article>
+
+    <article class="capitolo" id="pagina-13">
+      <span class="num">13 / 16</span>
+      <h3>Niccolò Machiavelli</h3>
+      <p>
+        Machiavelli (1469–1527) è segretario
+        della Repubblica fiorentina dal 1498
+        al 1512. Nel Principe analizza il potere
+        osservando la realtà concreta. Il governante
+        deve considerare virtù, fortuna e necessità
+        di conservare lo Stato.
+      </p>
+      <div class="galleria">
+        <img src="imagenes/pagina_13_imagen_01.jpg" alt="Immagine relativa a Machiavelli" loading="lazy">
+      </div>
+      <details class="nota">
+        <summary>✦ Da ricordare</summary>
+        <p>Verità effettuale: studiare ciò che accade realmente.</p>
+      </details>
+    </article>
+
+    <article class="capitolo" id="pagina-14">
+      <span class="num">14 / 16</span>
+      <h3>Guicciardini, pittura e scultura</h3>
+      <p>
+        Francesco Guicciardini (1483–1540)
+        studia le istituzioni e il governo di Firenze.
+        Scrive i Ricordi e la Storia d'Italia.
+        Nelle arti, Donatello si distingue per
+        la forza espressiva delle sue sculture,
+        come il David in bronzo.
+      </p>
+      <div class="galleria">
+        <img src="imagenes/pagina_14_imagen_01.jpg" alt="Immagine della sezione artistica" loading="lazy">
+      </div>
+      <details class="nota">
+        <summary>✦ Da ricordare</summary>
+        <p>Guicciardini presta attenzione ai casi particolari.</p>
+      </details>
+    </article>
+
+    <article class="capitolo" id="pagina-15">
+      <span class="num">15 / 16</span>
+      <h3>Pittura e scultura del Quattrocento</h3>
+      <p>
+        La scultura riscopre il corpo umano
+        e i modelli antichi. Donatello realizza
+        il David e il monumento al Gattamelata.
+        Andrea del Verrocchio crea il monumento
+        equestre a Bartolomeo Colleoni.
+      </p>
+      <div class="galleria">
+        <img src="imagenes/pagina_15_imagen_01.jpg" alt="Prima immagine di scultura" loading="lazy">
+        <img src="imagenes/pagina_15_imagen_02.jpg" alt="Seconda immagine di scultura" loading="lazy">
+      </div>
+      <details class="nota">
+        <summary>✦ Da ricordare</summary>
+        <p>Confronta i monumenti equestri: Gattamelata e Colleoni.</p>
+      </details>
+    </article>
+
+    <article class="capitolo" id="pagina-16">
+      <span class="num">16 / 16</span>
+      <h3>Testo politico: la verità effettuale</h3>
+      <p>
+        Nel capitolo XV del Principe, Machiavelli
+        distingue i comportamenti ideali da quelli
+        possibili nella vita politica. Un governante
+        deve valutare le conseguenze delle proprie
+        decisioni e non soltanto le intenzioni.
+      </p>
+      <details class="nota">
+        <summary>✦ Da ricordare</summary>
+        <p>
+          La politica deve essere studiata
+          alla luce della realtà.
+        </p>
+      </details>
+    </article>
+  </section>
+
+  <!-- CRONOLOGIA INTERATTIVA -->
+  <section id="cronologia">
+    <span class="eyebrow">INTERATTIVO</span>
+    <h2>Una linea del tempo</h2>
+    <p>Seleziona una data per scoprire che cosa accadde.</p>
+
+    <div class="timeline">
+      <button class="evento" type="button"
+        data-info="Leon Battista Alberti organizza il Certame Coronario, una gara poetica in volgare.">
+        <strong>1441</strong>
+        <span>Certame Coronario</span>
+      </button>
+
+      <button class="evento" type="button"
+        data-info="Muore Lorenzo il Magnifico, figura centrale dell'equilibrio politico italiano.">
+        <strong>1492</strong>
+        <span>Morte di Lorenzo</span>
+      </button>
+
+      <button class="evento" type="button"
+        data-info="Carlo VIII scende in Italia: iniziano le guerre d'Italia.">
+        <strong>1494</strong>
+        <span>Guerre d'Italia</span>
+      </button>
+
+      <button class="evento" type="button"
+        data-info="Machiavelli compone Il Principe, dedicato allo studio concreto del potere.">
+        <strong>1513</strong>
+        <span>Il Principe</span>
+      </button>
     </div>
 
-    <!-- INTRODUCCIÓN -->
-
-    <section id="introduzione">
-
-        <span class="numero-seccion">
-            INTRODUZIONE
-        </span>
-
-        <h2>Un'epoca di trasformazioni</h2>
-
-        <p class="capitular">
-            L'Umanesimo e il Rinascimento
-            segnano il passaggio dal Medioevo
-            alla prima età moderna.
-        </p>
-
-        <p>
-            La riscoperta dei testi greci e latini,
-            lo sviluppo delle arti, il mecenatismo
-            e una nuova attenzione verso l'uomo
-            trasformano profondamente la cultura.
-        </p>
-
-        <div class="frase-destacada">
-            <span>❝</span>
-            <p>
-                Un viaggio tra storia, letteratura,
-                filosofia e pensiero politico.
-            </p>
-        </div>
-
-    </section>
-
-    <!-- ÍNDICE -->
-
-    <section id="contenuti">
-
-        <span class="numero-seccion">
-            INDICE DEI CONTENUTI
-        </span>
-
-        <h2>I capitoli del Rinascimento</h2>
-
-        <p class="introduccion">
-            Seleziona un argomento per leggere
-            la pagina corrispondente del documento.
-        </p>
-
-        <div class="tarjetas">
-
-            <article class="tarjeta">
-                <span class="tarjeta-numero">I</span>
-                <h3>Il contesto storico</h3>
-                <p>
-                    Comuni, Signorie, Principati,
-                    corti e mecenatismo.
-                </p>
-                <button onclick="irPagina(2)">
-                    Leggi ❧
-                </button>
-            </article>
-
-            <article class="tarjeta">
-                <span class="tarjeta-numero">II</span>
-                <h3>Umanesimo e Rinascimento</h3>
-                <p>
-                    La riscoperta dei classici
-                    e i nuovi ideali culturali.
-                </p>
-                <button onclick="irPagina(2)">
-                    Leggi ❧
-                </button>
-            </article>
-
-            <article class="tarjeta">
-                <span class="tarjeta-numero">III</span>
-                <h3>La questione della lingua</h3>
-                <p>
-                    Il latino, il volgare e
-                    le principali teorie linguistiche.
-                </p>
-                <button onclick="irPagina(3)">
-                    Leggi ❧
-                </button>
-            </article>
-
-            <article class="tarjeta">
-                <span class="tarjeta-numero">IV</span>
-                <h3>Lorenzo de' Medici</h3>
-                <p>
-                    La poesia rinascimentale
-                    e il Trionfo di Bacco e Arianna.
-                </p>
-                <button onclick="irPagina(3)">
-                    Leggi ❧
-                </button>
-            </article>
-
-            <article class="tarjeta">
-                <span class="tarjeta-numero">V</span>
-                <h3>Angelo Poliziano</h3>
-                <p>
-                    La cultura della corte medicea
-                    e le Stanze per la giostra.
-                </p>
-                <button onclick="irPagina(6)">
-                    Leggi ❧
-                </button>
-            </article>
-
-            <article class="tarjeta">
-                <span class="tarjeta-numero">VI</span>
-                <h3>Il poema cavalleresco</h3>
-                <p>
-                    Pulci, Boiardo, Ariosto,
-                    Orlando innamorato e Orlando furioso.
-                </p>
-                <button onclick="irPagina(7)">
-                    Leggi ❧
-                </button>
-            </article>
-
-            <article class="tarjeta">
-                <span class="tarjeta-numero">VII</span>
-                <h3>Il pensiero politico</h3>
-                <p>
-                    La riflessione politica,
-                    Machiavelli e Guicciardini.
-                </p>
-                <button onclick="irPagina(12)">
-                    Leggi ❧
-                </button>
-            </article>
-
-        </div>
-
-    </section>
-
-    <!-- DOCUMENTO COMPLETO -->
-
-    <section id="documento">
-
-        <span class="numero-seccion">
-            BIBLIOTECA RINASCIMENTALE
-        </span>
-
-        <h2>Il documento completo</h2>
-
-        <p class="introduccion">
-            Qui puoi leggere tutte le 16 pagine
-            originali, comprese le opere letterarie,
-            i testi storici e le immagini.
-        </p>
-
-        <div class="lector">
-
-            <div class="controles-pdf">
-
-                <button onclick="paginaAnterior()">
-                    ❮ Precedente
-                </button>
-
-                <span id="contadorPagina">
-                    Caricamento...
-                </span>
-
-                <button onclick="paginaSiguiente()">
-                    Successiva ❯
-                </button>
-
-            </div>
-
-            <div id="visorPDF">
-                <p id="mensajePDF">
-                    Caricamento del documento...
-                </p>
-                <canvas id="paginaPDF"></canvas>
-            </div>
-
-            <div class="controles-pdf">
-                <button onclick="cambiarZoom(-0.2)">
-                    − Zoom
-                </button>
-
-                <button onclick="cambiarZoom(0.2)">
-                    + Zoom
-                </button>
-
-                <a href="rinascimento.pdf"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   class="boton">
-                    Apri PDF ↗
-                </a>
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- QUIZ -->
-
-    <section id="quiz">
-
-        <span class="numero-seccion">
-            PROVA DI CONOSCENZA
-        </span>
-
-        <h2>✧ Metti alla prova le tue conoscenze ✧</h2>
-
-        <p class="introduccion">
-            Rispondi alle domande per verificare
-            quanto hai imparato.
-        </p>
-
-        <form class="quiz" id="quizForm">
-
-            <h3>01. Che cos'è l'Umanesimo?</h3>
-
-            <label>
-                <input type="radio" name="pregunta1" value="a">
-                Un movimento militare
-            </label>
-
-            <label>
-                <input type="radio" name="pregunta1" value="b">
-                Un movimento letterario e filologico
-            </label>
-
-            <label>
-                <input type="radio" name="pregunta1" value="c">
-                Un sistema economico
-            </label>
-
-            <div class="linea-quiz"></div>
-
-            <h3>02. Che cos'è il mecenatismo?</h3>
-
-            <label>
-                <input type="radio" name="pregunta2" value="a">
-                Il finanziamento delle arti
-            </label>
-
-            <label>
-                <input type="radio" name="pregunta2" value="b">
-                Una tecnica pittorica
-            </label>
-
-            <label>
-                <input type="radio" name="pregunta2" value="c">
-                Una forma di governo
-            </label>
-
-            <div class="linea-quiz"></div>
-
-            <h3>03. Chi organizzò il Certame Coronario?</h3>
-
-            <label>
-                <input type="radio" name="pregunta3" value="a">
-                Ludovico Ariosto
-            </label>
-
-            <label>
-                <input type="radio" name="pregunta3" value="b">
-                Luigi Pulci
-            </label>
-
-            <label>
-                <input type="radio" name="pregunta3" value="c">
-                Leon Battista Alberti
-            </label>
-
-            <div class="linea-quiz"></div>
-
-            <h3>04. Chi scrisse l'Orlando furioso?</h3>
-
-            <label>
-                <input type="radio" name="pregunta4" value="a">
-                Angelo Poliziano
-            </label>
-
-            <label>
-                <input type="radio" name="pregunta4" value="b">
-                Ludovico Ariosto
-            </label>
-
-            <label>
-                <input type="radio" name="pregunta4" value="c">
-                Lorenzo de' Medici
-            </label>
-
-            <div class="linea-quiz"></div>
-
-            <h3>05. Su cosa si basa il pensiero politico di Machiavelli?</h3>
-
-            <label>
-                <input type="radio" name="pregunta5" value="a">
-                Sull'osservazione della realtà concreta
-            </label>
-
-            <label>
-                <input type="radio" name="pregunta5" value="b">
-                Soltanto sui miti antichi
-            </label>
-
-            <label>
-                <input type="radio" name="pregunta5" value="c">
-                Esclusivamente sulla fantasia
-            </label>
-
-            <div class="linea-quiz"></div>
-
-            <button type="submit">
-                Correggi le risposte ❧
-            </button>
-
-            <button type="reset" class="boton-secundario">
-                Ricomincia
-            </button>
-
-            <p id="resultado" aria-live="polite"></p>
-
-            <div id="explicaciones"></div>
-
-        </form>
-
-    </section>
+    <p id="evento-info" class="info" aria-live="polite">
+      Seleziona una data per scoprire perché è importante.
+    </p>
+  </section>
+
+  <!-- TARJETAS INTERACTIVAS -->
+  <section id="carte">
+    <span class="eyebrow">RIPASSO ATTIVO</span>
+    <h2>Indovina l'autore</h2>
+    <p>
+      Leggi l'indizio, prova a rispondere
+      e scopri la soluzione.
+    </p>
+
+    <div class="flashcard">
+      <span id="carta-contatore">Carta 1 di 5</span>
+      <h3 id="carta-domanda">Chi ha scritto il Morgante?</h3>
+      <p id="carta-risposta" hidden>Luigi Pulci.</p>
+
+      <div class="azioni">
+        <button id="rivela" type="button">Mostra risposta</button>
+        <button id="prossima" type="button">Prossima carta ❯</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUIZ -->
+  <section id="quiz">
+    <span class="eyebrow">METTITI ALLA PROVA</span>
+    <h2>Il quiz del Rinascimento</h2>
+
+    <form id="quizForm">
+
+      <fieldset>
+        <legend>1. Che cosa caratterizza l'Umanesimo?</legend>
+        <label><input type="radio" name="q1" value="a"> Le conquiste militari</label>
+        <label><input type="radio" name="q1" value="b"> Lo studio critico dei classici</label>
+        <label><input type="radio" name="q1" value="c"> Il rifiuto della letteratura</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>2. Chi organizzò il Certame Coronario?</legend>
+        <label><input type="radio" name="q2" value="a"> Leon Battista Alberti</label>
+        <label><input type="radio" name="q2" value="b"> Ariosto</label>
+        <label><input type="radio" name="q2" value="c"> Donatello</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>3. Chi scrisse l'Orlando innamorato?</legend>
+        <label><input type="radio" name="q3" value="a"> Machiavelli</label>
+        <label><input type="radio" name="q3" value="b"> Pulci</label>
+        <label><input type="radio" name="q3" value="c"> Boiardo</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>4. Qual è l'opera più celebre di Machiavelli citata nel materiale?</legend>
+        <label><input type="radio" name="q4" value="a"> Il Morgante</label>
+        <label><input type="radio" name="q4" value="b"> Il Principe</label>
+        <label><input type="radio" name="q4" value="c"> Le Stanze</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>5. Chi realizzò il monumento equestre al Gattamelata?</legend>
+        <label><input type="radio" name="q5" value="a"> Donatello</label>
+        <label><input type="radio" name="q5" value="b"> Poliziano</label>
+        <label><input type="radio" name="q5" value="c"> Guicciardini</label>
+      </fieldset>
+
+      <div class="azioni">
+        <button type="submit">Correggi ❧</button>
+        <button type="reset">Ricomincia</button>
+      </div>
+
+      <p id="resultado" aria-live="polite"></p>
+      <div id="detalle"></div>
+
+    </form>
+  </section>
 
 </main>
 
 <footer>
-    <div class="adorno">
-        ❦ ───────── ✦ ───────── ❦
-    </div>
-
-    <h2>Umanesimo e Rinascimento</h2>
-
-    <p>
-        La rinascita della cultura,
-        dell'arte e del pensiero.
-    </p>
-
-    <p class="copyright">
-        ❧ Progetto educativo · 2026 ❧
-    </p>
+  ❦ Umanesimo e Rinascimento ·
+  Un viaggio nella cultura italiana ❦
 </footer>
 
 </body>
