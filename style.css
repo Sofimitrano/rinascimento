@@ -387,4 +387,26 @@ footer {
   .flashcard {
     padding: 20px;
   }
+  
+/* Imágenes de obras renacentistas */
+
+.galleria figure {
+  margin: 0;
+  max-width: 420px;
+  text-align: center;
+}
+
+.galleria figure img {
+  display: block;
+  max-width: 100%;
+  max-height: 300px;
+  object-fit: contain;
+}
+
+.galleria figcaption {
+  margin-top: 12px;
+  color: #702d35;
+  font-size: 14px;
+  font-style: italic;
+}
 }
